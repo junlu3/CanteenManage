@@ -1,0 +1,215 @@
+﻿@model XL.CHC.Domain.DomainModel.MSDS_Customer
+@{
+    ViewBag.Title = "编辑员工";
+    ViewBag.CurrentPage = "CustomerManage_CustomerEdit";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet box blue" id="form_wizard_1">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-gift"></i> 编辑员工
+                </div>
+                <div class="actions">
+                    <a href="/Customer/Index" class="btn blue btn-sm">
+                        <i class="fa fa-mail-reply"></i> 返回
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <!-- BEGIN FORM-->
+                @using (Html.BeginForm("CreateOrUpdate", "Customer", FormMethod.Post, new { @class = "form-horizontal", enctype = "multipart/form-data" }))
+                {
+                    <div class="form-body">
+                        @Html.AntiForgeryToken()
+                        @*<input id="ID" name="ID" type="hidden" value="@Model.ID" />*@
+                        @Html.HiddenFor(x => x.ROW_ID)
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">员工名(中文):</label>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(model => model.EMPLOYEE_NAME_CN, new { @class = "form-control" })
+                                <span class="help-block font-red">
+                                    @Html.ValidationMessageFor(x => x.EMPLOYEE_NAME_CN)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">员工名(英文):</label>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(model => model.EMPLOYEE_NAME_EN, new { @class = "form-control" })
+                                <span class="help-block font-red">
+                                    @Html.ValidationMessageFor(x => x.EMPLOYEE_NAME_EN)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">员工名(拼音):</label>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(model => model.EMPLOYEE_NAME, new { @class = "form-control" })
+                                <span class="help-block font-red">
+                                    @Html.ValidationMessageFor(x => x.EMPLOYEE_NAME)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">饭卡号:</label>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(model => model.EMPLOYEE_CARD, new { @class = "form-control" })
+                                <span class="help-block font-red">
+                                    @Html.ValidationMessageFor(x => x.EMPLOYEE_CARD)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">饭卡状态:</label>
+                            <div class="col-md-4">
+                                <div class="checkbox-list">
+                                    <label>
+                                        @if (Model.CARD_STATUS)
+                                        {
+                                            @Html.CheckBoxFor(x => x.CARD_STATUS, new { @checked = true });
+                                        }
+                                        else
+                                        {
+                                            @Html.CheckBoxFor(x => x.CARD_STATUS);
+                                        } 启用
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">员工号:</label>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(model => model.EMPLOYEE_ID, new { @class = "form-control" })
+                                <span class="help-block font-red">
+                                    @Html.ValidationMessageFor(x => x.EMPLOYEE_ID)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">公司:</label>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(model => model.COMPANY_CODE, new { @class = "form-control" })
+                                <span class="help-block font-red">
+                                    @Html.ValidationMessageFor(x => x.COMPANY_CODE)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">部门:</label>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(model => model.DEPARTMENT_NAME, new { @class = "form-control" })
+                                <span class="help-block font-red">
+                                    @Html.ValidationMessageFor(x => x.DEPARTMENT_NAME)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">部门经理:</label>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(model => model.MGR_NAME, new { @class = "form-control" })
+                                <span class="help-block font-red">
+                                    @Html.ValidationMessageFor(x => x.MGR_NAME)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">工作地点:</label>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(model => model.LOCATION, new { @class = "form-control" })
+                                <span class="help-block font-red">
+                                    @Html.ValidationMessageFor(x => x.LOCATION)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">成本中心:</label>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(model => model.COMBO_CODE, new { @class = "form-control" })
+                                <span class="help-block font-red">
+                                    @Html.ValidationMessageFor(x => x.COMBO_CODE)
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">餐类:</label>
+                            <div class="col-md-4">
+                                <div class="checkbox-list">
+                                    <label>
+                                        @if (Model.IS_BREAKFAST)
+                                        {
+                                            @Html.CheckBoxFor(x => x.IS_BREAKFAST, new { @checked = true });
+                                        }
+                                        else
+                                        {
+                                            @Html.CheckBoxFor(x => x.IS_BREAKFAST);
+                                        } 早餐
+                                    </label>
+                                    <label>
+                                        @if (Model.IS_CHINESE_FOOD)
+                                        {
+                                            @Html.CheckBoxFor(x => x.IS_CHINESE_FOOD, new { @checked = true });
+                                        }
+                                        else
+                                        {
+                                            @Html.CheckBoxFor(x => x.IS_CHINESE_FOOD);
+                                        } 午餐
+                                    </label>
+                                    <label>
+                                        @if (Model.IS_WEST_FOOD)
+                                        {
+                                            @Html.CheckBoxFor(x => x.IS_WEST_FOOD, new { @checked = true });
+                                        }
+                                        else
+                                        {
+                                            @Html.CheckBoxFor(x => x.IS_WEST_FOOD);
+                                        }  晚餐
+                                    </label>
+                                    <label>
+                                        @if (Model.IS_SPECIAL_FOOD)
+                                        {
+                                            @Html.CheckBoxFor(x => x.IS_SPECIAL_FOOD, new { @checked = true });
+                                        }
+                                        else
+                                        {
+                                            @Html.CheckBoxFor(x => x.IS_SPECIAL_FOOD);
+                                        } 夜宵
+                                    </label>
+                                    <label>
+                                        @if (Model.IS_COFFEE)
+                                        {
+                                            @Html.CheckBoxFor(x => x.IS_COFFEE, new { @checked = true });
+                                        }
+                                        else
+                                        {
+                                            @Html.CheckBoxFor(x => x.IS_COFFEE);
+                                        } 咖啡
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        @*<div class="form-group">
+                                <label class="col-md-3 control-label">:</label>
+                                <div class="col-md-4">
+                                    @Html.DropDownListFor(model => Model.WorkStations_Array, Model.WorkStations, new { @class = "ui-multiselect", @multiple = "multiple" })
+                                </div>
+                            </div>*@
+                    </div>
+                    <div class="form-actions fluid">
+                        <div class="col-md-offset-3 col-md-9">
+                            <button type="submit" class="btn blue">提交</button>
+                            <a href="@Url.Action("Index", "Customer" )" class="btn default">返回员工列表</a>
+                        </div>
+                    </div>
+                    
+                 
+                }
+                <!-- END FORM-->
+            </div>
+        </div>
+    </div>
+</div>

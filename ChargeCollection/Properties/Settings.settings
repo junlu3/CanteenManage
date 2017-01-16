@@ -1,0 +1,54 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ChargeCollection.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CreatedBy" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">pos</Value>
+    </Setting>
+    <Setting Name="Created_Program" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">OrderMealBrw</Value>
+    </Setting>
+    <Setting Name="GroupID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">jt20080101</Value>
+    </Setting>
+    <Setting Name="CompanyID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">20080101</Value>
+    </Setting>
+    <Setting Name="SyncIntervalSec" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">300</Value>
+    </Setting>
+    <Setting Name="ImmediatelySync" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="StartWithLoadLocalCache" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="LunchStartTime" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">11</Value>
+    </Setting>
+    <Setting Name="LunchEndTime" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">15</Value>
+    </Setting>
+    <Setting Name="DinnerStartTime" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">17</Value>
+    </Setting>
+    <Setting Name="DinnerEndTime" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">19</Value>
+    </Setting>
+    <Setting Name="SupperStartTime" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="SupperEndTime" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">24</Value>
+    </Setting>
+    <Setting Name="ConnString" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">server=localhost;database=Husky;Integrated Security=false;user id=sa;pwd=1qaz@WSX;</Value>
+    </Setting>
+    <Setting Name="BreakfastStartTime" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">8</Value>
+    </Setting>
+    <Setting Name="BreakfastEndTime" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
